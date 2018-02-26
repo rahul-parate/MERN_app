@@ -21,12 +21,6 @@ app.use(express.static(path.join(__dirname, 'build')));
 // app.set('view engine', 'html');
 app.use('/api/product', product);
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
 
 // error handler
 app.use(function(err, req, res, next) {
