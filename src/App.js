@@ -76,7 +76,7 @@ class App extends Component {
   }
   handleChangeoption(event) {
     this.setState({ select: event.target.value });
-    alert(this.state.select);
+    // alert(this.state.select);
   }
   
 
