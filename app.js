@@ -9,9 +9,7 @@ var app = express();
 
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://heroku_0nrxvl6q:d6j382l02lrpf7bfmhq56qdo92@ds249818.mlab.com:49818/heroku_0nrxvl6q/shopping')
-  .then(() =>  console.log('connection succesful'))
-  .catch((err) => console.error(err));
+mongoose.connect('mongodb://heroku_0nrxvl6q:d6j382l02lrpf7bfmhq56qdo92@ds249818.mlab.com:49818/heroku_0nrxvl6q');
 
 
 app.use(logger('dev'));
