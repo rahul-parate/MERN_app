@@ -84,10 +84,15 @@ class App extends Component {
     return (
       <div class="container">
         <div class="panel panel-default">
-          <div class="panel-heading">
+          <div class="row heading">
+          <div class='col-md-6'>
             <h3 class="panel-title">
               PRODUCT CATALOG
             </h3>
+            </div>
+            <div class='col-md-6 text-right'>
+              <button class='btn btn-warning pull-right' onClick={this.emptyCart}>Empty Cart</button>
+            </div>
           </div>
           <div class="panel-body">
             <table class="table table-stripe">
@@ -132,15 +137,10 @@ class App extends Component {
             Email id : <input type="text" name="email" value={this.state.email} onChange={this.handleChange} id="email"/>
             </div>
             </div>
-            <div class='row'>
-              <div class='col-md-6'>
+            <div class='row text-center'>
               Cart : 
               <button type='submit' id='noofitems' class='btn btn-success'>0</button>
               <button type='submit' id='cartvalue' class='btn btn-success'>Empty</button>
-              </div>
-              <div class='col-md-6 text-right'>
-              <button  id='cartvalue' class='btn btn-warning pull-right' onClick={this.emptyCart}>Empty Cart</button>
-              </div>
             </div>
             </form>
                      
