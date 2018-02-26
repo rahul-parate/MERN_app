@@ -19,7 +19,7 @@
     "bootstrap": "^4.0.0"
   },
   "scripts": {
-    "start": "node app.js",
+    "start": "node ./bin/www",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
