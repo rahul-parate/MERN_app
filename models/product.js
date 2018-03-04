@@ -10,12 +10,12 @@ var productschema = new mongoose.Schema({
 
 module.exports = mongoose.model('Product', productschema);
 
-// var Tasks = mongoose.model('Product', productschema);
-// var todo = new Tasks({id : '102S',name: 'Shirt', desc:'Blue color XXL', price:'9899'});
-// // Save it to database
-// todo.save(function(err){
-//   if(err)
-//     console.log(err);
-//   else
-//     console.log(todo);
-// });
+var Tasks = mongoose.model('Product', productschema);
+var todo = new Tasks({id : '102K',name: 'Salwar', desc:'Black color XXL',type:['XXL','XL','M'], price:'9899'});
+// Save it to database
+todo.save(function(err){
+  if(err)
+    console.log(err);
+  else
+    console.log(todo);
+});

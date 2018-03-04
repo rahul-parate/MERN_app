@@ -26,13 +26,21 @@ class App extends Component {
 }
  handleSubmit(event) {
   event.preventDefault();
-      // alert(this.state.name);
-    axios.post('/api/product/order',{name:this.state.name,email:this.state.email,order : this.state.cart})
-    .then(function(response){
-      console.log(response);
-    }).catch(function (error) {
-                  console.log(error);
-              });
+      alert(this.state.name);
+      if (this.state.name != "" && this.state.email != "" && this.state.cart.length !=0 && typeof this.state.name != "undefined" && typeof this.state.email != "undefined"){
+        axios.post('/api/product/order',{name:this.state.name,email:this.state.email,order : this.state.cart})
+      .then(function(response){
+        console.log(response.data.id);
+        var abc = response.data.id;
+        alert("Your order id is "+ abc);
+      }).catch(function (error) {
+                    console.log(error);
+                });
+      }
+      else{
+        alert('Cart is empty or email and name is not provided');
+      }
+    
   }
   addtext(id){
         axios.get('/api/product/'+id)

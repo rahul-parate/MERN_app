@@ -9,7 +9,9 @@ var app = express();
 
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://heroku_0nrxvl6q:d6j382l02lrpf7bfmhq56qdo92@ds249818.mlab.com:49818/heroku_0nrxvl6q');
+mongoose.connect('mongodb://localhost/shopping')
+.then(() =>  console.log('connection succesful'))
+  .catch((err) => console.error(err));
 
 
 app.use(logger('dev'));
@@ -17,7 +19,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended':'false'}));
 app.use(express.static(path.join(__dirname, 'build')));
 // app.set('view engine', 'html');
-// app.use('/api/product', product);
+app.use('/api/product', product);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

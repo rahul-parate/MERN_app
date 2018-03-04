@@ -7,14 +7,14 @@ var order = require('../models/order.js');
 var cart = require('../models/cart.js');
 
 
-router.get('/api/product', function(req, res, next) {
+router.get('/', function(req, res, next) {
   product.find(function (err, prodetails) {
     if (err) return next(err);
     res.json(prodetails);
   });
 });
 
-router.get('/api/product/:id', function(req, res, next) {
+router.get('/:id', function(req, res, next) {
 	console.log(req.params);
   product.find({id : req.params.id}, function (err, post) {
     if (err) return next(err);
@@ -23,7 +23,7 @@ router.get('/api/product/:id', function(req, res, next) {
   });
 });
 
-router.get('/api/product/type/:id', function(req, res, next) {
+router.get('/type/:id', function(req, res, next) {
 	console.log(req.params);
   product.find({id : req.params.id},{type : 1}, function (err, type) {
     if (err) return next(err);
@@ -45,7 +45,7 @@ router.get('/api/product/type/:id', function(req, res, next) {
 // 	  });
 // });
 var order_id = 0;
-router.post('/api/product/order', function(req, res, next) {
+router.post('/order', function(req, res, next) {
 	console.log(req.body.order);
 	order_id = order_id + 1
 	var new_task = new customer({name: req.body.name, email:req.body.email});
